@@ -12,4 +12,32 @@
 \section{Introduction}
 Upon consultation with Brian (I thought my initial project was trivial to accomplish), I have decided to expand the scope my project and the final goal will be to pre-configure and pre-package a ready for distribution and deployment collaborative work environment for researchers and students working with digital texts in Japanese language. The initial goal to make it easier and quicker to complete multiple dictionary look-ups will still remain a large part of the project. The expanded functionality will include annotation and collaboration functionality that would allow, for example, a research student and supervisor to annotate, markup and collaboratively communicate while working on a text from using a pre-configured digital workspace.
 
+\section{Project Requirements}
+\begin{enumerate}
+    \item Self-contained digital workspace
+    \item Built-in enhanced dictionary
+    \item Annotation or mark-up functionality
+    \item Share-abilty of annotations between collaborators
+\end{enumerate}
+\section{Packaging and Deployment Requirements and Options}
+\begin{enumerate}
+    \item Final research environment must be prepacked to reduce set-up by user to minimum
+    \item Final package must offer the option for portable (USB) and local (local installation) deployments
+    \item Final environment must be multiplatform (at the moment I am looking at packaging for Windows and Linux systems, in the case of Linux I am limiting myself to Debian and derivative distributions such as Ubuntu, Mint etc. I will look into the possibility of prepackaging for Mac OS.)
+\end{enumerate}
+
+\section{Technology Required}
+\begin{enumerate}
+    \item Virtual Machine - I need to be able to develop and test on Windows, Linux and MacOSX (or whatever they call it these days, I'll stick to calling it MacOSX for now). Oracle VirtualBox should suffice, I am already using it to run Ubuntu 19.04 on a Windows 10 host which takes care of two of my target operating systems. I just need to get my hands on a MacOSX iso which looks to be obtainable upon some initial web searches.
+    \item Target Platforms - Windows, Linux, MacOS
+    \item Firefox browser - Firefox is a flexible and open source web browser which offers binary executables for my target platforms. Firefox will form the basis and the core user interface of the final environment, I will need a way to remove and replace the Firefox branding and replace it with something specific to this project, for the sake of non-technical user sanity, I don't want the end user to be deploying a Firefox branded package. If the user already has Firefox installed, this could cause confusion. I will be looking into preparing a package in a way similar to the way Tor Project (https://www.torproject.org/) packages theirs. I will look at packaging this up in such a way that when a portable installation is used, it can be executed on all three of my target platforms without any loss of configuration or workspace data.
+    \item Japanese - English hover dictionary plugins for Firefox - I would like the final environment to allow the user to choose between a faster and more stable Rikaichamp dictionary and the more customisable Yomichan dictionary plugin for power users.
+    \item Annotation solution - I have two candidates here: Hypothesis \newline (https://web.hypothes.is/) and Liner (https://getliner.com/)
+    \item Packaging and deployment solution for the final package. I believe that Mozilla Institutional Deployment \newline (https://wiki.mozilla.org/Firefox:2.0\verb|_|Institutional\verb|_|Deployment) should supply some initial ideas if not a solution.
+    \item Any other collaboration tools which I may come across in the coming month that can be integrated into the environment.
+\end{enumerate}
+
+\section{Goals}
+In simple terms, the goal is to give a non-technical user working with digital text in Japanese a pre-configured software package that makes it easier to read the text and collaborate on it, requires minimal technical knowledge to set-up and works on common operating systems out of the box.
+
 \end{document}
