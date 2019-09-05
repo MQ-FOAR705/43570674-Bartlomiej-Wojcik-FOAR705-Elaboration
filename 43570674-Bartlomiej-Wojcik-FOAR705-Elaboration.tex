@@ -57,10 +57,10 @@ In simple terms, the goal is to give a non-technical user working with digital t
 \begin{enumerate}
     \item Edge - There is no dictionary plugin for Edge which could meet my requirements. Support for third party stores and their plugins can be enabled on Edge allowing it to use Chrome plugins but Edge itself is tied to the Windows ecosystem and could not be deployed on Linux or a Mac without emulation.
     \item Internet Explorer - There is no dictionary plugin for Edge which could meet my requirements. IE does not even support plug-in in the contemporary sense.
-    \item Chrome, Chromium and other derivatives - Google Chrome is not an open source project even though it is based on open source Chromium. Furthermore, I have privacy concerns when it comes to using Google products as they have no ideological commitment to respecting user privacy.
+    \item Chrome, Chromium and other derivatives - Google Chrome is not an open source project even though it is based on open source Chromium. Furthermore, I have privacy concerns when it comes to using Google products as they have no ideological commitment to respecting user privacy. What speaks in favour of Chrome or Chromium is that ports of my chosen hover dictionary plugins are available and that Hypothesis annotation platform also offers a plugin for Chrome where there is none for Firefox.
     \item Opera - Opera is also based on Chromium and therefore incorporates Google code base, raising the same concerns for user privacy.
     \item Safari - Safari is limited to MacOS and therefore not adequate as a base for a research environment targeting multiple platforms.
-    \item Firefox - I have chosen Firefox as it is a free, open source web browser and there is a precedent for pre-packaging a pre-configured, portable, multi-platform and re-branded deployment package in Tor Project.
+    \item Firefox - I have chosen Firefox as it is a free, open source web browser and there is a precedent for pre-packaging a pre-configured, portable, multi-platform and re-branded deployment package in Tor Project. The problem with Firefox is that Hypothesis annotation platform only offers a bookmarklet for browsers other than Chrome. This may limit the functionality, and I am now thinking of looking into preparing two alternative packages with a research environment based on Chromium for users not concerned with privacy, and based on Firefox for those who are.
 \end{enumerate}
 \subsection{English Japanese Hover Dictionary with De-inflection}
 \begin{enumerate}
@@ -69,5 +69,15 @@ In simple terms, the goal is to give a non-technical user working with digital t
     \item Rikaichamp is a port of the original Rikaichan to the new Firefox plugin architecture. It requires minimum configuration and has a low system resource footprint making it a good choice for multi-platform deployment. Rikaichamp should perform reasonably well even on under powered systems.
     \item Yomichan has all the same practical functionality as Rikaichap but does not come with built-in dictionary files. This is not an issue since I will be pre-packaging it with Firefox and will make sure that it is fully configured, the advantage of this option is that it enables the user to purchase and install 3rd party dictionary files which may be better or more specialized (for example technical, academic or slang dictionaries) than the built-in dictionary included in Rikaichamp. Yomichan is noticeably slower and less responsive in terms of user experience, it feels noticeably sluggish even on high end systems like mine. I would like to include it as an option for power users and use Rikaichamp as the default dictionary solution.
 \end{enumerate}
-
+\subsection{Packaging and Deployment Solution/}
+\begin{enumerate}
+    \item Mozilla Institutional Deployment - Reading the documentation I have noticed that this tool specifically revolves around creating msi packages which are fundamentally tied into the Windows ecosystem and therefore not suitable for multi-platform deployment.
+    \item Portable zip archive - If I can simply pre-configure my Firefox based research environment, I can simply put it into a zip archive which can be extracted and used on virtually all contemporary operating systems. If I can have one set of configuration files and platform independent plugins accompanied by binaries for each of the target platforms, this will allow the user to keep the software on a USB stick and simply plug it in and run it on any of the supported operating systems.
+    \item Tor Project - This item is not exactly a solution but rather an example of the kind of deployment solution I would like to develop in terms of having a re-branded and pre-configured Firefox based work environment. There is one major difference in that the Tor Project offers zip archives that are platform specific whereas I will be looking at having one archive that can work on as many platforms as possible.
+\end{enumerate}
+\subsection{Annotation Solution}
+\begin{enumerate}
+    \item Liner - Liner is small, robust and offers online sync but the functionality is limited for non-paying users. There are privacy concerns regarding the free version and the collaboration functionality is limited.
+    \item Hypothesis directly markets itself with features specifically targeting education and research users making it a good choice. It is also free which removes the problems that I have with Liner. The only issue is that they do not offer a plugin for Firefox which is my primary choice of base software to build my research environment on.
+\end{enumerate}
 \end {document}
