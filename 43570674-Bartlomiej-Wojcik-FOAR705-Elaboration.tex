@@ -10,20 +10,20 @@
 \maketitle
 
 \section{Introduction}
-Upon consultation with Brian (I thought my initial project was trivial to accomplish), I have decided to expand the scope my project and the final goal will be to pre-configure and pre-package a ready for distribution and deployment collaborative work environment for researchers and students working with digital texts in Japanese language. The initial goal to make it easier and quicker to complete multiple dictionary look-ups will still remain a large part of the project. The expanded functionality will include annotation and collaboration functionality that would allow, for example, a research student and supervisor to annotate, markup and collaboratively communicate while working on a text from using a pre-configured digital workspace.
+Upon consultation with Brian (I thought my initial project was trivial to accomplish), I have decided to expand the scope my project and the final goal will be to pre-configure and pre-package a ready for distribution and deployment collaborative work environment for researchers and students working with digital texts in Japanese language. The initial goal to make it easier and quicker to complete multiple dictionary look-ups will still remain a large part of the project. The expanded functionality will include annotation and collaboration functionality that would allow, for example, a research student and supervisor to annotate, markup and collaboratively communicate while working on a text from using a pre-configured digital work space.
 
 \section{Project Requirements}
 \begin{enumerate}
-    \item Self-contained digital workspace
+    \item Self-contained digital work space
     \item Built-in enhanced dictionary
     \item Annotation or mark-up functionality
-    \item Share-abilty of annotations between collaborators
+    \item Share-ability of annotations between collaborators
 \end{enumerate}
 \section{Packaging and Deployment Requirements and Options}
 \begin{enumerate}
     \item Final research environment must be prepacked to reduce set-up by user to minimum
     \item Final package must offer the option for portable (USB) and local (local installation) deployments
-    \item Final environment must be multiplatform (at the moment I am looking at packaging for Windows and Linux systems, in the case of Linux I am limiting myself to Debian and derivative distributions such as Ubuntu, Mint etc. I will look into the possibility of prepackaging for Mac OS.)
+    \item Final environment must be multi-platform (at the moment I am looking at packaging for Windows and Linux systems, in the case of Linux I am limiting myself to Debian and derivative distributions such as Ubuntu, Mint etc. I will look into the possibility of prepackaging for Mac OS.)
 \end{enumerate}
 
 \section{Technology Required}
@@ -51,11 +51,23 @@ In simple terms, the goal is to give a non-technical user working with digital t
 \begin{enumerate}
     \item Windows - My host system is already running Windows 10 and considering the issues with  sourcing a fully licensed other version like Win 8, 7, Vista or XP (I would not consider anything older as even XP is now depreciated), I have made the rational choice of sticking to what is already running on my development system.
     \item MacOS - There are no alternatives to MacOS for deploying on Mac computers. Here, and I simply sourced an ISO of MacOS Mojave which I updated to the latest version upon installation on my Virtual Machine.
-    \item Linux - I have initially considered Arch Linux as the distribution for testing my research environment on Linux because it is highly customizable. In practice this means it is also barebones out of the box, requires a lot of impractical configuration, and may not necessarily reflect what a common contemporary Linux user is likely to be running. I have further tested OpenSUSE, Mint, Debian and Lubuntu before finally deciding on Ubuntu as the distribution to use. Ubuntu is a Debian derivative, it is largely compatible with that system as well as its own forks like Lubuntu, Kubuntu and Mint. It is also probably the most commonly used Linux distribution amongs non-technical users and therefore likely to be used by a Linux user of the research environment that I am preparing. In most other cases, it is at least very likely to be compatible. I decided to use Ubuntu as the lowest common denominator.
+    \item Linux - I have initially considered Arch Linux as the distribution for testing my research environment on Linux because it is highly customizable. In practice this means it is also bare bones out of the box, requires a lot of impractical configuration, and may not necessarily reflect what a common contemporary Linux user is likely to be running. I have further tested OpenSUSE, Mint, Debian and Lubuntu before finally deciding on Ubuntu as the distribution to use. Ubuntu is a Debian derivative, it is largely compatible with that system as well as its own forks like Lubuntu, Kubuntu and Mint. It is also probably the most commonly used Linux distribution amongst non-technical users and therefore likely to be used by a Linux user of the research environment that I am preparing. In most other cases, it is at least very likely to be compatible. I decided to use Ubuntu as the lowest common denominator.
 \end{enumerate}
-\subsection{Research Environment Base}
+\subsection{Research Environment Base - Web Browser with Hover Dictionary Support}
 \begin{enumerate}
-    \item 
+    \item Edge - There is no dictionary plugin for Edge which could meet my requirements. Support for third party stores and their plugins can be enabled on Edge allowing it to use Chrome plugins but Edge itself is tied to the Windows ecosystem and could not be deployed on Linux or a Mac without emulation.
+    \item Internet Explorer - There is no dictionary plugin for Edge which could meet my requirements. IE does not even support plug-in in the contemporary sense.
+    \item Chrome, Chromium and other derivatives - Google Chrome is not an open source project even though it is based on open source Chromium. Furthermore, I have privacy concerns when it comes to using Google products as they have no ideological commitment to respecting user privacy.
+    \item Opera - Opera is also based on Chromium and therefore incorporates Google code base, raising the same concerns for user privacy.
+    \item Safari - Safari is limited to MacOS and therefore not adequate as a base for a research environment targeting multiple platforms.
+    \item Firefox - I have chosen Firefox as it is a free, open source web browser and there is a precedent for pre-packaging a pre-configured, portable, multi-platform and re-branded deployment package in Tor Project.
+\end{enumerate}
+\subsection{English Japanese Hover Dictionary with De-inflection}
+\begin{enumerate}
+    \item Rikaichan, the first plugin of this kind is now depreciated and no longer maintained. It does not work in the current versions of Firefox after Firefox migrated to a new plugin architecture.
+    \item Rikaisama was a fork of Rikaichan featuring extended functionality targeting Japanese language learners. It is also no longer maintained and not compatible with the current main branch of Firefox.
+    \item Rikaichamp is a port of the original Rikaichan to the new Firefox plugin architecture. It requires minimum configuration and has a low system resource footprint making it a good choice for multi-platform deployment. Rikaichamp should perform reasonably well even on under powered systems.
+    \item Yomichan has all the same practical functionality as Rikaichap but does not come with built-in dictionary files. This is not an issue since I will be pre-packaging it with Firefox and will make sure that it is fully configured, the advantage of this option is that it enables the user to purchase and install 3rd party dictionary files which may be better or more specialized (for example technical, academic or slang dictionaries) than the built-in dictionary included in Rikaichamp. Yomichan is noticeably slower and less responsive in terms of user experience, it feels noticeably sluggish even on high end systems like mine. I would like to include it as an option for power users and use Rikaichamp as the default dictionary solution.
 \end{enumerate}
 
 \end {document}
