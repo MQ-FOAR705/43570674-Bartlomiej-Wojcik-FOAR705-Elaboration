@@ -1,9 +1,9 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 
-\title{FOAR705 Week 4 Elaboration}
+\title{FOAR705 Elaboration}
 \author{Bart Wojcik}
-\date{29 August 2019}
+\date{6 September 2019}
 
 \begin{document}
 
@@ -40,4 +40,22 @@ Upon consultation with Brian (I thought my initial project was trivial to accomp
 \section{Goals}
 In simple terms, the goal is to give a non-technical user working with digital text in Japanese a pre-configured software package that makes it easier to read the text and collaborate on it, requires minimal technical knowledge to set-up and works on common operating systems out of the box.
 
-\end{document}
+\section {Technology Testing}
+\subsection{Virtual Machine}
+\begin{enumerate}
+    \item QEMU - I have prior experience with QEMU. Almost a decade ago, I was using QEMU to emulate x86 architecture processors on a PowerPC system. I have found QEMU to be flexible but not as robustly supported as my chosen alternative VirtualBox. The main advantage of QEMU is the ability to set up a guest OS environment across host systems with vastly different processor architectures. It is not something I required however. Since I am only looking for a virtualization solution in the way of setting up deployment and testing environments, I require not flexibility but rather robust support and easy guest-host system communication. I need something that works well with contemporary systems and does it out of the box.
+    \item WSL - WIndows Subsystem for Linux - The decision to disqualify was a simple one; it would not allow me to set up a MacOS guest system.
+    \item Oracle VirtualBox - This virtualization solution allowed me to easily set up and test several Linux distributions as well as, with a little modification, a MacOS installation, all with a reasonable level of hardware support including 3d hardware acceleration, bi-directional clipboard sharing and performance comparable to running the guest system natively on my hardware.
+\end{enumerate}
+\subsection{Target Operating Systems}
+\begin{enumerate}
+    \item Windows - My host system is already running Windows 10 and considering the issues with  sourcing a fully licensed other version like Win 8, 7, Vista or XP (I would not consider anything older as even XP is now depreciated), I have made the rational choice of sticking to what is already running on my development system.
+    \item MacOS - There are no alternatives to MacOS for deploying on Mac computers. Here, and I simply sourced an ISO of MacOS Mojave which I updated to the latest version upon installation on my Virtual Machine.
+    \item Linux - I have initially considered Arch Linux as the distribution for testing my research environment on Linux because it is highly customizable. In practice this means it is also barebones out of the box, requires a lot of impractical configuration, and may not necessarily reflect what a common contemporary Linux user is likely to be running. I have further tested OpenSUSE, Mint, Debian and Lubuntu before finally deciding on Ubuntu as the distribution to use. Ubuntu is a Debian derivative, it is largely compatible with that system as well as its own forks like Lubuntu, Kubuntu and Mint. It is also probably the most commonly used Linux distribution amongs non-technical users and therefore likely to be used by a Linux user of the research environment that I am preparing. In most other cases, it is at least very likely to be compatible. I decided to use Ubuntu as the lowest common denominator.
+\end{enumerate}
+\subsection{Research Environment Base}
+\begin{enumerate}
+    \item 
+\end{enumerate}
+
+\end {document}
